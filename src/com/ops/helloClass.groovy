@@ -1,7 +1,10 @@
 package com.ops
 
 public class helloClass {
-    def whatIsForDinner(String meal) {
-      sh "echo Dinner is ${meal}."
+    def whatIsForDinner(Map config) {
+      sh "echo Dinner is ${config.meal}."
+    }
+    def nope(){
+      sh "echo NOPE!"
     }
 }
