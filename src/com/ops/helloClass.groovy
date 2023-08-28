@@ -12,6 +12,7 @@ public class helloClass implements Serializable {
     }
 
     public def sayNope() {
-      steps.sh "echo NOPE!"
+      //steps.sh "echo NOPE!"
+        return "No way!"
     }
 }
