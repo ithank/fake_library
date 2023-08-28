@@ -1,18 +1,18 @@
 package com.ops;
 
 public class helloClass implements Serializable {
-    def steps
+    def context
 
-    public helloClass(steps) {
-        this.steps = steps
+    public helloClass(context) {
+        this.context = context
     }
     
     public def whatIsForDinner(Map config = [:]) {
-     steps.sh "echo Dinner is ${config.meal}."
+     context.sh "echo Dinner is ${config.meal}."
     }
 
     public def sayNope() {
-      //steps.sh "echo NOPE!"
+      //context.sh "echo NOPE!"
         return "No way!"
     }
 }
