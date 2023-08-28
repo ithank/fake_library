@@ -1,8 +1,9 @@
 #!groovy
+package com.ops
+
 import org.yaml.snakeyaml.Yaml
 import hudson.AbortException
 
-package com.ops
 
 public class projectUtils implements Serializable {
   def context
