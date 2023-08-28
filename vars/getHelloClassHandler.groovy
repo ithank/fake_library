@@ -1,5 +1,7 @@
+import com.ops.helloClass
+
 def call(){
-    def myClass =  new com.ops.helloClass()
+    def myClass =  new helloClass(this)
     //myClass.nope()
     return myClass.sayNope()
 }
