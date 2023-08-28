@@ -12,7 +12,7 @@ public class projectUtils implements Serializable {
   }
 
   public readProject(String repo) {
-    def project = readYaml file libraryResource('podTemplates/docker.yaml')
+    def project = readYaml file libraryResource('test.yaml')
     return project
   }
 
