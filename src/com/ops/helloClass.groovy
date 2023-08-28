@@ -1,6 +1,6 @@
 package com.ops
 
-public class helloClass {
+public class helloClass inmplements Serializable {
     public def whatIsForDinner(Map config = [:]) {
      sh "echo Dinner is ${config.meal}."
     }
