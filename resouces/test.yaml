@@ -1,3 +1,0 @@
-unitTest:
-  seleniumUrl: "http://localhost"
-  seleniumTag: "local"
