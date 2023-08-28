@@ -1,4 +1,4 @@
 def call() {
-  def fileContentts = libraryResource 'test.yaml'
+  def fileContents = libraryResource 'test.yaml'
   return fileContents
 }
