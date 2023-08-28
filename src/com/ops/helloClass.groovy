@@ -6,6 +6,6 @@ public class helloClass {
     }
 
     public def nope() {
-      sh "echo NOPE!"
+      echo "NOPE!"
     }
 }
