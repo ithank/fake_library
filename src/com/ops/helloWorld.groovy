@@ -8,3 +8,7 @@ def louder(Map config) {
     msg = msg.toUpperCase()
     sh "echo ${msg}"
 }
+
+def nope() {
+    sh "echo NOPE!"
+}
