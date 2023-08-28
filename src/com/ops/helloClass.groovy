@@ -1,11 +1,11 @@
 package com.ops
 
 public class helloClass {
-    def whatIsForDinner(Map config) {
-     echo "Dinner is ${config.meal}."
+    public def whatIsForDinner(Map config) {
+     sh "echo Dinner is ${config.meal}."
     }
 
-    //def nope(Map config) {
-    //  sh "echo NOPE!"
-    //}
+    public def nope() {
+      sh "echo NOPE!"
+    }
 }
