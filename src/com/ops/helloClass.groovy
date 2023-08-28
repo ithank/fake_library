@@ -5,7 +5,7 @@ public class helloClass {
      sh "echo Dinner is ${config.meal}."
     }
 
-    public def nope() {
-      echo "NOPE!"
+    public def sayNope() {
+      sh "echo NOPE!"
     }
 }
