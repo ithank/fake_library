@@ -1,4 +1,4 @@
-def call(String base_url){
+def call(){
     def myClass =  new com.ops.helloClass()
     return myClass
 }
