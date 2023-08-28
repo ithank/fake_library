@@ -1,11 +1,17 @@
 package com.ops;
 
 public class helloClass implements Serializable {
+    def steps
+
+    public helloClass(steps) {
+        this.steps = steps
+    }
+    
     public def whatIsForDinner(Map config = [:]) {
-     sh "echo Dinner is ${config.meal}."
+     steps.sh "echo Dinner is ${config.meal}."
     }
 
     public def sayNope() {
-      sh "echo NOPE!"
+      steps.sh "echo NOPE!"
     }
 }
