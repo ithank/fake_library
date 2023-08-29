@@ -65,9 +65,10 @@ public class projectUtils implements Serializable {
     return fileContent 
   }
 
-  public writeFile(filePath, fileContents) {
-    File file = new File(filePath)
-    file.write(fileContents)
+  public writeAFile(filePath, fileContents) {
+    //File file = new File(filePath)
+    //file.write(fileContents)
+    context.writeFile(file: filePath, data: fileContents)
   }
   
 }
