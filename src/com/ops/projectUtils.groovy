@@ -56,9 +56,13 @@ public class projectUtils implements Serializable {
     project["key2"]=99
     def newMap = ["anotherKey":"anotherValue"]
 
-    return mm.merge(project, newMap)
-
-    
-    
+    return mm.merge(project, newMap)    
   }
+
+  public readFile(filePath) {
+    File file = new File(filePath)
+    String fileContent = file.text
+    return fileContent 
+  }
+  
 }
