@@ -38,5 +38,5 @@ public class projectUtils implements Serializable {
     anotherKey:"anotherValue"
     '''
     return mm.merge(project, newMap)
-    
+  }
 }
