@@ -32,11 +32,11 @@ public class projectUtils implements Serializable {
   }
 
   public fixup(project) {
-    def mm = new mapMerge()
+    //def mm = new mapMerge()
     
-    def newMap = '''
-    anotherKey:"anotherValue"
-    '''
-    return mm.merge(project, newMap)
+    //def newMap = '''
+    //anotherKey:"anotherValue"
+    //'''
+    return "fred" // mm.merge(project, newMap)
   }
 }
