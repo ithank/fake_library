@@ -15,8 +15,8 @@ public class projectUtils implements Serializable {
 
   public readProject(String repo) {
     println("in projectUtils.readProject")
-    //def project = this.libraryResource 'test.yaml'
-    def project = readYaml file: repo
+    //def project = context.libraryResource 'test.yaml'
+    def project = context.readYaml file: repo
     return project
   }
 
@@ -25,7 +25,7 @@ public class projectUtils implements Serializable {
   }
 
   public readFile(path) {
-    def stringContents = readYaml file: path
+    def stringContents = context.readYaml file: path
     return stringContents
   }
   
