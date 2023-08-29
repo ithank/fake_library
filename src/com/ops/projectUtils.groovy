@@ -19,8 +19,8 @@ public class projectUtils implements Serializable {
     return project
   }
 
-  public testFile() {
-    context.sh("ls -la /var/jenkins_home/jobs/project-sim/workspace")
+  public testFile(path) {
+    context.sh("ls -la ${path}")
   }
   
 }
