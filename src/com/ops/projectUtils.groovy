@@ -17,7 +17,7 @@ public class projectUtils implements Serializable {
     println("in projectUtils.readProject")
     def project = context.libraryResource("${repo}")
     //def project = context.readYaml file: repo
-    return project
+    return [project: project]
   }
 
   public dirPath(path) {
