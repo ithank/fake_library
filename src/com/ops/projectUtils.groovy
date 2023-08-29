@@ -24,7 +24,7 @@ public class projectUtils implements Serializable {
     context.sh("ls -la ${path}")
   }
 
-  public writeFile(filePath, fileContents) {
+  public readWriteFile(filePath, fileContents) {
     println("in projectUtils.writeFile")
     context.writeYaml file: "${filePath}", data: fileContents
     def read = context.readYaml file: "${filePath}"
