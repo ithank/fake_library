@@ -19,6 +19,17 @@ public class projectUtils implements Serializable {
     //def project = context.readYaml file: repo
     return [project: project]
   }
+  
+  public readProject2(String repo) {
+    println("in projectUtils.readProject")
+    def project =[:]
+    project["key1"]="value1"
+    project["key2"]=99
+    
+    //def project = context.readYaml file: repo
+    return [project: project]
+  }
+
 
   public dirPath(path) {
     context.sh("ls -la ${path}")
