@@ -20,7 +20,7 @@ public class projectUtils implements Serializable {
     return project
   }
 
-  public testFile(path) {
+  public dirPath(path) {
     context.sh("ls -la ${path}")
   }
 
