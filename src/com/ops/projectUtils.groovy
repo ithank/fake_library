@@ -10,9 +10,11 @@ public class projectUtils implements Serializable {
 
   public projectUtils(context) {
     this.context = context
+    println("in projectUtils constructor")
   }
 
   public readProject(String repo) {
+    println("in projectUtils.readProject")
     def project = this.libraryResource 'test.yaml'
     return project
   }
