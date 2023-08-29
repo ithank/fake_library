@@ -22,5 +22,10 @@ public class projectUtils implements Serializable {
   public testFile(path) {
     context.sh("ls -la ${path}")
   }
+
+  public readFile(path) {
+    def stringContents = readYaml file: path
+    return stringContents
+  }
   
 }
