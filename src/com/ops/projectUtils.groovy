@@ -42,7 +42,7 @@ public class projectUtils implements Serializable {
     return read
   }
 
-  public fixup(Map project) {
+  public fixup(projectStuff) {
     //def mm = new mapMerge()
     
     //def newMap = '''
