@@ -30,4 +30,13 @@ public class projectUtils implements Serializable {
     def read = context.readYaml file: "${filePath}"
     return read
   }
+
+  public fixup(project) {
+    def mm = new mapMerge()
+    
+    def newMap = '''
+    anotherKey:"anotherValue"
+    '''
+    return mm.merge(project, newMap)
+    
 }
