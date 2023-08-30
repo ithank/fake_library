@@ -50,14 +50,13 @@ public class projectUtils implements Serializable {
     return mm.merge(project, newMap)
   }
   public mergeTest() {
-    //def mm = new mapMerge()
+    def mm = new mapMerge()
     def project =[:]
     project["key1"]="value1"
     project["key2"]=99
     def newMap = ["anotherKey":"anotherValue"]
 
-    // return mm.merge(project, newMap)    
-    return mergeMaps(project, newMap)    
+    return mm.merge(project, newMap)    
   }
 
   public readFile(filePath) {
