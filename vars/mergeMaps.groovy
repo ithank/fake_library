@@ -1,6 +1,6 @@
 import com.ops.mapMerge
 
-def call(maps){
-    def mm =  new mapMerge(maps)
+def call(Map... maps){
+    def mm =  new mapMerge()
     return mm.merge(maps)
 }
