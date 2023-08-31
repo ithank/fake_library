@@ -64,11 +64,25 @@ public class projectUtils implements Serializable {
     String fileContent = file.text
     return fileContent 
   }
+  
+  public readFileSubDir(filePath) {
+    context.dir('mySubDir'){
+      File file = new File(filePath)
+      String fileContent = file.text
+      return fileContent 
+    }
+  }
 
   public writeAFile(filePath, fileContents) {
     //File file = new File(filePath)
     //file.write(fileContents)
     context.writeFile(file: filePath, text: fileContents)
+  }
+  
+  public writeAFileSubDir(filePath, fileContents) {
+    context.dir('mySubDir'){
+      context.writeFile(file: filePath, text: fileContents)
+    }
   }
   
 }
