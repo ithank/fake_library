@@ -29,6 +29,7 @@ public class mapTesting implements Serializable {
   }
   
   def getHelmMap() {
+      def mm = new mapMerge()
       def project =[:]
       project["key1"]="value1"
       project["key2"]=99
@@ -39,7 +40,7 @@ public class mapTesting implements Serializable {
   
     
       def tempMap = [projectTemplateDeployment: project]
-      tempMap = mergeMaps(tempMap, [helmTemplate: helm])
+      tempMap = mm.merge(tempMap, [helmTemplate: helm])
     
       //def project = context.readYaml file: repo
       //return [helm: project]  
