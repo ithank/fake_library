@@ -1,6 +1,6 @@
 import com.ops.mapTesting
 
 def call(){
-    def obj =  new MapTesting(this)
+    def obj =  new mapTesting(this)
     return obj
 }
