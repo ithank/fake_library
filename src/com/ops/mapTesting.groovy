@@ -11,6 +11,7 @@ public class mapTesting implements Serializable {
     this.context = context
   }
   public makeAndMerge() {
+    def mm = new mapMerge()
     def outMap = [:]
     def tmpMap = [:]
     
@@ -20,9 +21,9 @@ public class mapTesting implements Serializable {
     tmpMap["EnableSwagger"] = false
     tmpMap["EnableHealthProbes"] = true
     tmpMap["Predeploy"] = false
-    outMap = mergeMaps(outMap, [selections: tmpMap])
+    outMap = mm.merge(outMap, [selections: tmpMap])
     tmpMap = getOtherMap()
-    outMap = mergeMaps(outMap, tmpMap)
+    outMap = mm.merge(outMap, tmpMap)
   }
   
   def getHemlMap() {
