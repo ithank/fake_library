@@ -21,7 +21,8 @@ public class mapTesting implements Serializable {
     tmpMap["EnableSwagger"] = false
     tmpMap["EnableHealthProbes"] = true
     tmpMap["Predeploy"] = false
-    outMap = mm.merge(outMap, [selections: tmpMap])
+    //outMap = mm.merge(outMap, [selections: tmpMap])
+    outMap = [selections: tmpMap]
     
     tmpMap = getHelmMap()
     outMap = mm.merge(outMap, tmpMap)
