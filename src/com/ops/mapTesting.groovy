@@ -20,9 +20,9 @@ public class mapTesting implements Serializable {
     tmpMap["EnableSwagger"] = false
     tmpMap["EnableHealthProbes"] = true
     tmpMap["Predeploy"] = false
-    outMap = mergeMaps(args, [selections: tmpMap])
+    outMap = mergeMaps(outMap, [selections: tmpMap])
     tmpMap = getOtherMap()
-    outMap = mergeMaps(args, tmpMap)
+    outMap = mergeMaps(outMap, tmpMap)
   }
   
   def getHemlMap() {
