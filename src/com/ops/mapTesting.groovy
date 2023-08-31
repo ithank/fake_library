@@ -22,11 +22,12 @@ public class mapTesting implements Serializable {
     tmpMap["EnableHealthProbes"] = true
     tmpMap["Predeploy"] = false
     outMap = mm.merge(outMap, [selections: tmpMap])
-    tmpMap = getOtherMap()
+    
+    tmpMap = getHelmMap()
     outMap = mm.merge(outMap, tmpMap)
   }
   
-  def getHemlMap() {
+  def getHelmMap() {
       def project =[:]
       project["key1"]="value1"
       project["key2"]=99
