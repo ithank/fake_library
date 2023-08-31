@@ -32,8 +32,17 @@ public class mapTesting implements Serializable {
       def project =[:]
       project["key1"]="value1"
       project["key2"]=99
-      
+
+      def helm =[:]
+      helm["myKey1"]="some value"
+      helm["myKey2"]=123456
+  
+    
+      def tempMap = [projectTemplateDeployment: project]
+      tempMap = mergeMaps(tempMap, [helmTemplate: helm])
+    
       //def project = context.readYaml file: repo
-      return [helm: project]  
+      //return [helm: project]  
+    return tempMap
   }
 }
