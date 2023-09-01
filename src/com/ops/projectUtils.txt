@@ -1,0 +1,1 @@
+The projectUtils class contains functions needed for working with Project related stuff.
