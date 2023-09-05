@@ -50,6 +50,11 @@ public class projectUtils implements Serializable {
     return mm.merge(project, newMap)
   }
   public mergeTest() {
+    def msg = "Into mergeTest"
+    println(">> ${msg}")
+    context.println(">>> ${msg}")
+    context.sh("echo ${msg}")
+    
     def mm = new mapMerge()
     def project =[:]
     project["key1"]="value1"
