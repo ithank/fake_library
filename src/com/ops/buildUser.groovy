@@ -11,7 +11,7 @@ public class buildUser
   public Map getBuildUserData()
   {
     def user = [:]
-    wrap([$class: 'BuildUser']) {
+    context.wrap([$class: 'BuildUser']) {
       user.name = context.env.BUILD_USER
       user.email = context.env.BUILD_USER_EMAIL
     }
