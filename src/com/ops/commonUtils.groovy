@@ -52,7 +52,7 @@ public class commonUtils
     def response = context.httpRequest "${charts_prefix}/${project}"
     def props = context.readJSON text: response.content
 
-    def versions=props.version.findAll { it.startsWith(${version_prefix}) }
+    def versions=props.version.findAll { it.startsWith(version_prefix) }
     def sortedVersions = sortVersionList(versions).reverse()
 
     return sortedVersions
