@@ -12,8 +12,8 @@ public class buildUser
   {
     def user = [:]
 
-    user.name = context.BUILD_USER
-    user.email = context.BUILD_USER_EMAIL
+    user.name = context.env.BUILD_USER
+    user.email = context.env.BUILD_USER_EMAIL
     return user
   }
   
