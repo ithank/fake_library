@@ -57,4 +57,13 @@ public class commonUtils
 
     return sortedVersions
   }  
+
+  public getEnvironmentList()
+  {
+    context.println "build user id: ${context.env.BUILD_USER_ID}"
+      def auths = Jenkins.instance.securityRealm.loadUserByUsername(context.env.BUILD_USER_ID)
+      .authorities.collect{a -> a.authority}
+
+    context.println "AD Groups: ${auths}"
+  }
 }
