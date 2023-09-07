@@ -48,8 +48,8 @@ public class commonUtils
 
   public createChartList()
   {
-    def response = httpRequest "https://hub.emrops.com/api/chartrepo/pv/charts/automation-test-api"
-    def props = readJSON text: response.content
+    def response = context.httpRequest "https://hub.emrops.com/api/chartrepo/pv/charts/automation-test-api"
+    def props = context.readJSON text: response.content
 
     def versions=props.version.findAll { it.startsWith("1.3") }
     def sortedVersions = sortVersionList(versions).reverse()
