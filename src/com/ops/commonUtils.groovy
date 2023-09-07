@@ -1,6 +1,14 @@
 package com.ops
 
+public class commonUtils
+{
+  def context
+  public commonUtils(context)
+  {
+    this.context = context
+  }
 
+  
   @NonCPS
   public sortVersionList(list)
   {
@@ -37,3 +45,4 @@ package com.ops
 
     return list.sort(versionComparator)
   }
+}
