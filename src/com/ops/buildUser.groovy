@@ -12,11 +12,11 @@ public class buildUser
   {
     def user = [:]
     context.wrap([$class: 'BuildUser']) {
-      user.name = context.env.BUILD_USER+"_HH"
+      user.name = context.env.BUILD_USER
       user.email = context.env.BUILD_USER_EMAIL
     }
     //return user
-    return [uName:user.name, uEmail:user.email]
+    return [name:user.name, email:user.email] //alternate building a map at return
   }
   
 }
