@@ -15,7 +15,8 @@ public class buildUser
       user.name = context.env.BUILD_USER
       user.email = context.env.BUILD_USER_EMAIL
     }
-    return user
+    //return user
+    return [uName:user.name, uEmail:user.email]
   }
   
 }
