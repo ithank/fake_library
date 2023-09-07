@@ -49,7 +49,7 @@ public class commonUtils
   public createChartList(chart_repo, project, version_prefix="1.3")
   {
     def charts_prefix="https://${chart_repo}/api/chartrepo/pv/charts"
-    def response = context.httpRequest "${charts_prefix}/${project.build.image}"
+    def response = context.httpRequest "${charts_prefix}/${project}"
     def props = context.readJSON text: response.content
 
     def versions=props.version.findAll { it.startsWith(${version_prefix}) }
