@@ -12,8 +12,8 @@ public class buildUser
   {
     def user = [:]
     context.wrap([$class: 'BuildUser']) {
-      user.name = env.BUILD_USER
-      user.email = env.BUILD_USER_EMAIL
+      user.name = context.env.BUILD_USER
+      user.email = context.env.BUILD_USER_EMAIL
     }
     return user
   }
