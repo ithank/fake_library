@@ -66,7 +66,7 @@ public class commonUtils
       //def auths = Jenkins.instance.securityRealm.loadUserByUsername(context.env.BUILD_USER_ID)
       //  .authorities.collect{a -> a.authority}
       context.println "Retrieving User AD Groups for user: test_user"
-      def auths = Jenkins.instance.securityRealm.loadUserByUsername(test_user)
+      def auths = Jenkins.instance.securityRealm.loadUserByUsername("test_user")
       .authorities.collect{a -> a.authority}
 
       context.println "AD Groups: ${auths}"
