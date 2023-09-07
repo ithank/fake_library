@@ -46,12 +46,13 @@ public class commonUtils
     return list.sort(versionComparator)
   }
 
-  public createChartList()
+  public createChartList(chart_repo, project, version_prefix="1.3")
   {
-    def response = context.httpRequest "https://hub.emrops.com/api/chartrepo/pv/charts/automation-test-api"
+    def charts_prefix="https://${chart_repo}/api/chartrepo/pv/charts"
+    def response = context.httpRequest "${charts_prefix}/${project.build.image}"
     def props = context.readJSON text: response.content
 
-    def versions=props.version.findAll { it.startsWith("1.3") }
+    def versions=props.version.findAll { it.startsWith(${version_prefix}) }
     def sortedVersions = sortVersionList(versions).reverse()
 
     return sortedVersions
