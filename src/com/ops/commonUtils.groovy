@@ -45,4 +45,15 @@ public class commonUtils
 
     return list.sort(versionComparator)
   }
+
+  public createChartList()
+  {
+    def response = httpRequest "https://hub.emrops.com/api/chartrepo/pv/charts/automation-test-api"
+    def props = readJSON text: response.content
+
+    def versions=props.version.findAll { it.startsWith("1.3") }
+    def sortedVersions = sortVersionList(versions).reverse()
+
+    return sortedVersions
+  }  
 }
