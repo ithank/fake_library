@@ -8,7 +8,7 @@ public class buildUser
     this.context = context
   }
 
-  public Map getBuildUser()
+  public Map getBuildUserData()
   {
     def user = [:]
 
