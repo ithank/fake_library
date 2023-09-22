@@ -42,7 +42,7 @@ public deployStandardDialog(Map args)
     println "User selection: ${selection}"
     args = mapm.merge(args, selection)
     println("returning")
-
+  } //stage
 }
 
 public deployHelmRelease(Map args)
