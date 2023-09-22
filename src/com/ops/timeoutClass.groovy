@@ -2,7 +2,7 @@ package com.ops
 
 public deployPipeline()
 {
-  def args = [:]
+  def args = ["project":"fred"]
   println("calling deployStandardDialog")
 
   args=deployStandardDialog(args)
@@ -54,6 +54,7 @@ public deployStandardDialog(Map args)
       throw e
     }
     println("returning")
+    return args
   } //stage
 }
 
