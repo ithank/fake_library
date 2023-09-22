@@ -28,7 +28,7 @@ public deployStandardDialog(Map args)
   stage('Prompt for selection')
   {
     try {
-      timeout(time: 2, unit: 'MINUTES')
+      timeout(time: 1, unit: 'MINUTES')
       {
 
         selection = input message: 'Select image to deploy and environment', ok: 'Select',
@@ -50,7 +50,8 @@ public deployStandardDialog(Map args)
     {
       println("in error handler")
       println("error: \n ${e}")
-      currentBuild.result = 'ABORTED'
+      currentBuild.result = 'FAILURE'
+      throw e
     }
     println("returning")
   } //stage
