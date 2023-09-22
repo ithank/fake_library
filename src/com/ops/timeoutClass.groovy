@@ -14,12 +14,15 @@ public deployPipeline()
 public deployStandardDialog(Map args)
 {
   def mapm = new mapMerge()
+  def image_list = []
+  def branches = []
+  def chartVersions = []
 
   stage("gather")
   {
-    def image_list = ["one", "two"]
-    def branches = []
-    deg chartVersions = ["1.1.1", "1.1.2", "1.1.3"]
+    image_list = ["one", "two"]
+    branches = []
+    chartVersions = ["1.1.1", "1.1.2", "1.1.3"]
   }
 
   stage('Prompt for selection')
