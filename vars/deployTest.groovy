@@ -11,6 +11,8 @@ def call()
   {
     println("in deployTest error handler")
     println("error: \n ${e}")
+      println("Stacktrace:")
+        err.printStackTrace()
     currentBuild.result = 'FAILURE'
     throw e
   }

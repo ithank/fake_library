@@ -50,6 +50,8 @@ public deployStandardDialog(Map args)
     {
       println("in error handler")
       println("error: \n ${e}")
+      println("Stacktrace:")
+        err.printStackTrace()
       currentBuild.result = 'FAILURE'
       throw e
     }
