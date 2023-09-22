@@ -27,23 +27,31 @@ public deployStandardDialog(Map args)
 
   stage('Prompt for selection')
   {
-    timeout(time: 2, unit: 'MINUTES')
+    try {
+      timeout(time: 2, unit: 'MINUTES')
+      {
+
+        selection = input message: 'Select image to deploy and environment', ok: 'Select',
+          parameters: [
+            choice(name: 'Tag', choices: image_list, description: 'Choose an image'),
+            choice(name: 'Environment', choices: branches, description: 'Choose an environment'),
+            choice(name: 'ChartVersion', choices: chartVersions, description: 'Choose a chart'),
+            booleanParam(name: 'Predeploy', defaultValue: false, description: 'Check/Create AWS Parameter Store keys only'),
+            booleanParam(name: 'EnableNewRelic', defaultValue: true, description: 'Enable New Relic, assumes global is on'),
+            booleanParam(name: 'EnableSwagger', defaultValue: false, description: 'Enable Swagger'),
+            booleanParam(name: 'EnableHealthProbes', defaultValue: true, description: 'Enable Health Checks')
+        ]
+
+      } // timeout
+      println "User selection: ${selection}"
+      args = mapm.merge(args, selection)
+    }
+    catch(e)
     {
-
-      selection = input message: 'Select image to deploy and environment', ok: 'Select',
-        parameters: [
-          choice(name: 'Tag', choices: image_list, description: 'Choose an image'),
-          choice(name: 'Environment', choices: branches, description: 'Choose an environment'),
-          choice(name: 'ChartVersion', choices: chartVersions, description: 'Choose a chart'),
-          booleanParam(name: 'Predeploy', defaultValue: false, description: 'Check/Create AWS Parameter Store keys only'),
-          booleanParam(name: 'EnableNewRelic', defaultValue: true, description: 'Enable New Relic, assumes global is on'),
-          booleanParam(name: 'EnableSwagger', defaultValue: false, description: 'Enable Swagger'),
-          booleanParam(name: 'EnableHealthProbes', defaultValue: true, description: 'Enable Health Checks')
-      ]
-
-    } // timeout
-    println "User selection: ${selection}"
-    args = mapm.merge(args, selection)
+      println("in error handler")
+      println("error: \n ${e}")
+      currentBuild.result = 'ABORTED'
+    }
     println("returning")
   } //stage
 }
