@@ -61,5 +61,6 @@ public deployHelmRelease(Map args)
   stage("deployHelmRelease")
   {
     println("in deployHelmRelease")
+    println("current settings: ${args}")
   }
 }
