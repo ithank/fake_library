@@ -21,7 +21,7 @@ public deployStandardDialog(Map args)
   stage("gather")
   {
     image_list = ["one", "two"]
-    branches = []
+    branches = ["dev","st"]
     chartVersions = ["1.1.1", "1.1.2", "1.1.3"]
   }
 
